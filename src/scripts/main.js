@@ -2,11 +2,11 @@
 
 function waitFor(element, eventName) {
   return new Promise((resolve) => {
-    function handler(elementListener) {
+    function handler(e) {
       element.removeEventListener(eventName, handler);
 
       resolve(
-        `It was ${eventName} on the element: ${element.nodeName}, id: ${element.id}`,
+        `It was ${eventName} on the element: ${element.nodeName}, id: ${element.id}.`,
       );
     }
 
